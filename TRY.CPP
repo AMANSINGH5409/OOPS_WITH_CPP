@@ -1,14 +1,24 @@
 #include<iostream>
 using namespace std;
-int main(){
-    int a,b;
-    cout<<"Enter first number: "<<endl;
-    cin>>a;
-    cout<<"Enter second number: "<<endl;
-    cin>>b;
-    if(a>b){
-        cout<<a<<" is largest";
-    }else{
-        cout<<b<<" is largest";
+class fees{
+    private:int college_fees;
+    public:int Enrollno;
+
+    public:void setDetails(int fees,int enrollno){
+        college_fees  = fees;
+        Enrollno = enrollno;
+    } 
+    public:int getfees(){
+        return college_fees;
     }
+};
+class feesDetails:public fees{
+     public:int Displayfeeswithfine(){
+         int fees_fine = 500 + getfees();
+         return fees_fine;
+     }
+};
+int main(){
+    feesDetails f1;
+    cout<<f1.Displayfeeswithfine();
 }
